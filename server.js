@@ -57,6 +57,7 @@ app.post("/addproducts", upload.single('image',1), function(req, res) {
     img: req.file.originalname,
     desc: req.body.desc,
     harga: req.body.harga,
+    jenis: req.body.jenis
   }
   // add if block if jenis not selected
   json.update(newdata, req.body.type, req.body.jenis)
