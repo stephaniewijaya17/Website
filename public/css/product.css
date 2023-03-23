@@ -14,7 +14,6 @@
 .title-button{
   width:14%;
   font-size:1.2rem;
-  margin-bottom: 15px;
 }
 
 .subtitle-button {
@@ -22,10 +21,14 @@
   font-size: 0.8rem;
 }
 
-.block {
-  display: block;
-  margin: 0;
-  padding: 0;
+.bordered {
+  width: 60%;
+  padding: 0.6%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 15px;
 }
 
 .items{
@@ -216,6 +219,17 @@ input{
   display: inline-block;
 }
 
+.image-container {
+  height: 300px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
 @media screen and (max-device-width: 768px){
   #searchbar{
     width: 95%;
@@ -232,8 +246,19 @@ input{
     font-size: 25px;
   }
 
-  .block {
-    align-items: left;
+  .card-img-top {
+    width: auto;
+    height: auto;
+    max-height: 400px;
+  }
+
+  .bordered {
+    padding: 0.6%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 15px;
   }
   .searchresult{
     border: 1px solid rgba(0,0,0,0.2);

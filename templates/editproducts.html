@@ -49,17 +49,17 @@
           {% for item in jenis %}
           <form action="/editproducts" method="post" class="col-sm-6 col-lg-4 col-xl-3 items">
             <div class="form-group card" id="{{item.id}}">
-              <img src="images/{{item.img}}" class="card-img-top" alt="...">
+              <div class="image-container"><img src="images/{{item.img}}" class="card-img-top" alt="..."></div>
               <div class="card-body">
                 <h3 class="card-title" style="display:none">{{item.name}}</h3>
                 <input type="text" name="name" value="{{item.name}}" placeholder="Nama produk" class="form-product-name card-title">
                 <select name="jenis">
                   <option value="">(Jenis Produk)</option>
-                  <option value="sayurberdaun">Sayur Berdaun</option>
-                  <option value="sayurlain">Sayur Lain</option>
-                  <option value="kacang">Kacang</option>
-                  <option value="bawang">Bawang</option>
-                  <option value="umbi">Umbi</option>
+                  <option value="Sayur Berdaun" {% if item.jenis == "Sayur Berdaun" %} selected="selected" {% endif %}>Sayur Berdaun</option>
+                  <option value="Sayur Lain" {% if item.jenis == "Sayur Lain" %} selected="selected" {% endif %}>Sayur Lain</option>
+                  <option value="Kacang" {% if item.jenis == "Kacang" %} selected="selected" {% endif %}>Kacang</option>
+                  <option value="Bawang" {% if item.jenis == "Bawang" %} selected="selected" {% endif %}>Bawang</option>
+                  <option value="Umbi" {% if item.jenis == "Umbi" %} selected="selected" {% endif %}>Umbi</option>
                 </select>
                 <input type="text" name="desc" value="{{item.desc}}" placeholder="Deskripsi Produk" class="form-product-description">
 
@@ -93,14 +93,14 @@
           {% for item in jenis %}
           <form action="/editproducts" method="post" class="col-sm-6 col-lg-4 col-xl-3 items">
             <div class="form-group card" id="{{item.id}}">
-              <img src="images/{{item.img}}" class="card-img-top" alt="...">
+              <div class="image-container"><img src="images/{{item.img}}" class="card-img-top" alt="..."></div>
               <div class="card-body">
                 <h3 class="card-title" style="display:none">{{item.name}}</h3>
                 <input type="text" name="name" value="{{item.name}}" placeholder="Nama produk" class="form-product-name">
                 <select name="jenis">
                   <option value="">(Jenis Produk)</option>
-                  <option value="buahreguler">Buah Reguler</option>
-                  <option value="buahmusiman">Buah Musiman</option>
+                  <option value="Buah Reguler" {% if item.jenis == "Buah Reguler" %} selected="selected" {% endif %}>Buah Reguler</option>
+                  <option value="Buah Musiman" {% if item.jenis == "BBuah Musiman" %} selected="selected" {% endif %}>Buah Musiman</option>
                 </select>
                 <input type="text" name="desc" value="{{item.desc}}" placeholder="Deskripsi Produk" class="form-product-description">
 
@@ -134,14 +134,14 @@
           {% for item in jenis %}
           <form action="/editproducts" method="post" class="col-sm-6 col-lg-4 col-xl-3 items">
             <div class="form-group card" id="{{item.id}}">
-              <img src="images/{{item.img}}" class="card-img-top" alt="...">
+              <div class="image-container"><img src="images/{{item.img}}" class="card-img-top" alt="..."></div>
               <div class="card-body">
                 <h3 class="card-title" style="display:none">{{item.name}}</h3>
                 <input type="text" name="name" value="{{item.name}}" placeholder="Nama produk" class="form-product-name">
                 <select name="jenis">
                   <option value="">(Jenis Produk)</option>
-                  <option value="lokal">Lokal</option>
-                  <option value="import">Import</option>
+                  <option value="Lokal" {% if item.jenis == "Lokal" %} selected="selected" {% endif %}>Lokal</option>
+                  <option value="Import" {% if item.jenis == "Import" %} selected="selected" {% endif %}>Import</option>
                 </select>
                 <input type="text" name="desc" value="{{item.desc}}" placeholder="Deskripsi Produk" class="form-product-description">
 
@@ -175,15 +175,15 @@
           {% for item in jenis %}
           <form action="/editproducts" method="post" class="col-sm-6 col-lg-4 col-xl-3 items">
             <div class="form-group card" id="{{item.id}}">
-              <img src="images/{{item.img}}" class="card-img-top" alt="...">
+              <div class="image-container"><img src="images/{{item.img}}" class="card-img-top" alt="..."></div>
               <div class="card-body">
                 <h3 class="card-title" style="display:none">{{item.name}}</h3>
                 <input type="text" name="name" value="{{item.name}}" placeholder="Nama produk" class="form-product-name">
                 <select name="jenis">
                   <option value="">(Jenis Produk)</option>
-                  <option value="ayam">Ayam</option>
-                  <option value="ikan">Ikan</option>
-                  <option value="olahan">Olahan</option>
+                  <option value="Ayam" {% if item.jenis == "Ayam" %} selected="selected" {% endif %}>Ayam</option>
+                  <option value="Ikan" {% if item.jenis == "Ikan" %} selected="selected" {% endif %}>Ikan</option>
+                  <option value="Olahan" {% if item.jenis == "Olahan" %} selected="selected" {% endif %}>Olahan</option>
                 </select>
                 <input type="text" name="desc" value="{{item.desc}}" placeholder="Deskripsi Produk" class="form-product-description">
 
@@ -217,15 +217,15 @@
           {% for item in jenis %}
           <form action="/editproducts" method="post" class="col-sm-6 col-lg-4 col-xl-3 items">
             <div class="form-group card" id="{{item.id}}">
-              <img src="images/{{item.img}}" class="card-img-top" alt="...">
+              <div class="image-container"><img src="images/{{item.img}}" class="card-img-top" alt="..."></div>
               <div class="card-body">
                 <h3 class="card-title" style="display:none">{{item.name}}</h3>
                 <input type="text" name="name" value="{{item.name}}" placeholder="Nama produk" class="form-product-name">
                 <select name="jenis">
                   <option value="">(Jenis Produk)</option>
-                  <option value="household">Household</option>
-                  <option value="skin">Skin & Body Care</option>
-                  <option value="sustainable">Sustainable</option>
+                  <option value="Household" {% if item.jenis == "Household" %} selected="selected" {% endif %}>Household</option>
+                  <option value="Skin" {% if item.jenis == "Skin" %} selected="selected" {% endif %}>Skin & Body Care</option>
+                  <option value="Sustainable" {% if item.jenis == "Sustainable" %} selected="selected" {% endif %}>Sustainable</option>
                 </select>
                 <input type="text" name="desc" value="{{item.desc}}" placeholder="Deskripsi Produk" class="form-product-description">
 
@@ -259,14 +259,14 @@
           {% for item in jenis %}
           <form action="/editproducts" method="post" class="col-sm-6 col-lg-4 col-xl-3 items">
             <div class="form-group card" id="{{item.id}}">
-              <img src="images/{{item.img}}" class="card-img-top" alt="...">
+              <div class="image-container"><img src="images/{{item.img}}" class="card-img-top" alt="..."></div>
               <div class="card-body">
                 <h3 class="card-title" style="display:none">{{item.name}}</h3>
                 <input type="text" name="name" value="{{item.name}}" placeholder="Nama produk" class="form-product-name">
                 <select name="jenis">
                   <option value="">(Jenis Produk)</option>
-                  <option value="anakusaha">Okay Juice</option>
-                  <option value="madesan">Madesan</option>
+                  <option value="Anak Usaha" {% if item.jenis == "Anak Usaha" %} selected="selected" {% endif %}>Okay Juice</option>
+                  <option value="Madesan" {% if item.jenis == "Madesan" %} selected="selected" {% endif %}>Madesan</option>
                 </select>
                 <input type="text" name="desc" value="{{item.desc}}" placeholder="Deskripsi Produk" class="form-product-description">
 

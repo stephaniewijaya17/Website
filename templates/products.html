@@ -27,7 +27,7 @@
   <!-- shopping cart -->
   <section id="shopping-cart" class="hide">
     <form id = "formdata" action="/sendrequest" class="container-fluid shoppingcart" method="post" style="left:980px;">
-      <h2 class="section-title" style="margin-top:50px; border-bottom: 1px solid rgba(0, 0, 0, 0.5); padding-bottom:25px;">Shoping cart</h2>
+      <h2 class="section-title" style="margin-top:50px; border-bottom: 1px solid rgba(0, 0, 0, 0.5); padding-bottom:25px;">Shopping cart</h2>
       <div class="empty_shopping_cart">
         <h3>Waiting for your order</h3><br>
         <i class="fa-regular fa-hourglass icon"></i>
@@ -61,15 +61,15 @@
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-leaf"></i> Sayur</div>
     <div class="products-section">
       {% for key, jenis in sayur %}
-      <div class="block">
-      {% if jenis.length > 0 %}<div class="btn btn-outline-dark rounded-box1 subtitle-button"><i class="fa-solid fa-leaf"></i> {{key}}</div> {% endif %}
+      <div class="bordered">
+        <h2>{{key}}</h2>
       </div>
       <div class="items row">
 
         {% for item in jenis %}
         <div class="col-sm-6 col-lg-4 col-xl-3 items" id="{{item.special_id}}">
           <div class="card" id="{{item.id}}">
-            <img src="images/{{item.img}}" class="card-img-top" alt="...">
+            <div class="image-container"><img src="images/{{item.img}}" class="card-img-top" alt="..."></div>
             <div class="card-body">
               <h3 class="card-title">{{item.name}}</h3>
               <p class="card-text">{{item.desc}}</p>
@@ -84,24 +84,24 @@
           </div>
         </div>
         {% endfor %}
-      {% endfor %}
       </div>
+      {% endfor %}
     </div>
   </section>
 
   <section id="buah" class="container-fluid">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-apple-whole"></i> Buah</div>
     <div class="products-section">
-      <div class="block">
-        {% if jenis.length > 0 %}<div class="btn btn-outline-dark rounded-box1 subtitle-button"><i class="fa-solid fa-apple-whole"></i> {{key}}</div> {% endif %}
+      {% for key, jenis in buah %}
+      <div class="bordered">
+        <h2>{{key}}</h2>
       </div>
       <div class="items row">
 
-        {% for key, jenis in buah %}
           {% for item in jenis %}
           <div class="col-sm-6 col-lg-4 col-xl-3 items" id="{{item.special_id}}">
             <div class="card" id="{{item.id}}">
-              <img src="images/{{item.img}}" class="card-img-top" alt="...">
+              <div class="image-container"><img src="images/{{item.img}}" class="card-img-top" alt="..."></div>
               <div class="card-body">
                 <h3 class="card-title">{{item.name}}</h3>
                 <p class="card-text">{{item.desc}}</p>
@@ -116,25 +116,24 @@
             </div>
           </div>
           {% endfor %}
-        {% endfor %}
-
       </div>
+      {% endfor %}
     </div>
   </section>
 
   <section id="produkkemasan" class="container-fluid">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-egg"></i> Produk Kemasan</div>
     <div class="products-section">
-      <div class="block">
-        {% if jenis.length > 0 %}<div class="btn btn-outline-dark rounded-box1 subtitle-button"><i class="fa-solid fa-egg"></i> {{key}}</div> {% endif %}
+      {% for key, jenis in produkkemasan %}
+      <div class="bordered">
+        <h2>{{key}}</h2>
       </div>
       <div class="items row">
 
-        {% for key, jenis in produk_kemasan %}
           {% for item in jenis %}
           <div class="col-sm-6 col-lg-4 col-xl-3 items" id="{{item.special_id}}">
             <div class="card" id="{{item.id}}">
-              <img src="images/{{item.img}}" class="card-img-top" alt="...">
+              <div class="image-container"><img src="images/{{item.img}}" class="card-img-top" alt="..."></div>
               <div class="card-body">
                 <h3 class="card-title">{{item.name}}</h3>
                 <p class="card-text">{{item.desc}}</p>
@@ -158,16 +157,16 @@
   <section id="frozen" class="container-fluid">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-fish"></i> Frozen</div>
     <div class="products-section">
-      <div class="block">
-        {% if jenis.length > 0 %}<div class="btn btn-outline-dark rounded-box1 subtitle-button"><i class="fa-solid fa-fish"></i> {{key}}</div> {% endif %}
+      {% for key, jenis in frozen %}
+      <div class="bordered">
+        <h2>{{key}}</h2>
       </div>
       <div class="items row">
 
-        {% for key, jenis in frozen %}
           {% for item in jenis %}
           <div class="col-sm-6 col-lg-4 col-xl-3 items" id="{{item.special_id}}">
             <div class="card" id="{{item.id}}">
-              <img src="images/{{item.img}}" class="card-img-top" alt="...">
+              <div class="image-container"><img src="images/{{item.img}}" class="card-img-top" alt="..."></div>
               <div class="card-body">
                 <h3 class="card-title">{{item.name}}</h3>
                 <p class="card-text">{{item.desc}}</p>
@@ -182,25 +181,24 @@
             </div>
           </div>
           {% endfor %}
-        {% endfor %}
-
       </div>
+      {% endfor %}
     </div>
   </section>
 
   <section id="produkolahan" class="container-fluid last">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-cookie-bite"></i> Produk Olahan</div>
     <div class="products-section">
-      <div class="block">
-        {% if jenis.length > 0 %}<div class="btn btn-outline-dark rounded-box1 subtitle-button"><i class="fa-solid fa-cookie-bite"></i> {{key}}</div> {% endif %}
+      {% for key, jenis in produkolahan %}
+      <div class="bordered">
+        <h2>{{key}}</h2>
       </div>
       <div class="items row">
 
-        {% for key, jenis in produkolahan %}
           {% for item in jenis %}
           <div class="col-sm-6 col-lg-4 col-xl-3 items" id="{{item.special_id}}">
             <div class="card" id="{{item.id}}">
-              <img src="images/{{item.img}}" class="card-img-top" alt="...">
+              <div class="image-container"><img src="images/{{item.img}}" class="card-img-top" alt="..."></div>
               <div class="card-body">
                 <h3 class="card-title">{{item.name}}</h3>
                 <p class="card-text">{{item.desc}}</p>
@@ -215,25 +213,24 @@
             </div>
           </div>
           {% endfor %}
-        {% endfor %}
-
       </div>
+      {% endfor %}
     </div>
   </section>
 
   <section id="anakusaha" class="container-fluid last">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-cookie-bite"></i> Anak Usaha</div>
     <div class="products-section">
-      <div class="block">
-        {% if jenis.length > 0 %}<div class="btn btn-outline-dark rounded-box1 subtitle-button"><i class="fa-solid fa-cookie-bite"></i> {{key}}</div> {% endif %}
+      {% for key, jenis in anakusaha %}
+      <div class="bordered">
+        <h2>{{key}}</h2>
       </div>
       <div class="items row">
 
-        {% for key, jenis in anakusaha %}
           {% for item in jenis %}
           <div class="col-sm-6 col-lg-4 col-xl-3 items" id="{{item.special_id}}">
             <div class="card" id="{{item.id}}">
-              <img src="images/{{item.img}}" class="card-img-top" alt="...">
+              <div class="image-container"><img src="images/{{item.img}}" class="card-img-top" alt="..."></div>
               <div class="card-body">
                 <h3 class="card-title">{{item.name}}</h3>
                 <p class="card-text">{{item.desc}}</p>
@@ -248,9 +245,8 @@
             </div>
           </div>
           {% endfor %}
-        {% endfor %}
-
       </div>
+      {% endfor %}
     </div>
   </section>
 
