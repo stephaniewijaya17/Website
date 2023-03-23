@@ -41,10 +41,12 @@
 
   <section id="sayur" class="container-fluid">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-leaf"></i> Sayur</div>
-    <div class="products-section">
-      <div class="items row">
-        {% set i = 0 %}
+    <div class="products-section bordered">
         {% for key, jenis in sayur %}
+        <div style="border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-top: 1px solid rgba(0, 0, 0, 0.5); padding:25px 0;">
+          <h2>{{key}}</h2>
+        </div>
+        <div class="items row">
           {% set m = 0 %}
           {% for item in jenis %}
           <form action="/editproducts" method="post" class="col-sm-6 col-lg-4 col-xl-3 items">
@@ -53,14 +55,6 @@
               <div class="card-body">
                 <h3 class="card-title" style="display:none">{{item.name}}</h3>
                 <input type="text" name="name" value="{{item.name}}" placeholder="Nama produk" class="form-product-name card-title">
-                <select name="jenis">
-                  <option value="">(Jenis Produk)</option>
-                  <option value="Sayur Berdaun" {% if item.jenis == "Sayur Berdaun" %} selected="selected" {% endif %}>Sayur Berdaun</option>
-                  <option value="Sayur Lain" {% if item.jenis == "Sayur Lain" %} selected="selected" {% endif %}>Sayur Lain</option>
-                  <option value="Kacang" {% if item.jenis == "Kacang" %} selected="selected" {% endif %}>Kacang</option>
-                  <option value="Bawang" {% if item.jenis == "Bawang" %} selected="selected" {% endif %}>Bawang</option>
-                  <option value="Umbi" {% if item.jenis == "Umbi" %} selected="selected" {% endif %}>Umbi</option>
-                </select>
                 <input type="text" name="desc" value="{{item.desc}}" placeholder="Deskripsi Produk" class="form-product-description">
 
                 <div style="text-align:center;">
@@ -76,19 +70,21 @@
           {% set n = m+1 %}
           {% set m = n %}
           {% endfor %}
-        {% set j = i+1 %}
-        {% set i = j %}
+
+        </div>
         {% endfor %}
-      </div>
+      
     </div>
   </section>
 
   <section id="buah" class="container-fluid">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-apple-whole"></i> Buah</div>
-    <div class="products-section">
-      <div class="items row">
-        {% set i = 0 %}
+    <div class="products-section bordered">
         {% for key, jenis in buah %}
+        <div style="border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-top: 1px solid rgba(0, 0, 0, 0.5); padding:25px 0;">
+          <h2>{{key}}</h2>
+        </div>
+        <div class="items row">
           {% set m = 0 %}
           {% for item in jenis %}
           <form action="/editproducts" method="post" class="col-sm-6 col-lg-4 col-xl-3 items">
@@ -97,11 +93,6 @@
               <div class="card-body">
                 <h3 class="card-title" style="display:none">{{item.name}}</h3>
                 <input type="text" name="name" value="{{item.name}}" placeholder="Nama produk" class="form-product-name">
-                <select name="jenis">
-                  <option value="">(Jenis Produk)</option>
-                  <option value="Buah Reguler" {% if item.jenis == "Buah Reguler" %} selected="selected" {% endif %}>Buah Reguler</option>
-                  <option value="Buah Musiman" {% if item.jenis == "BBuah Musiman" %} selected="selected" {% endif %}>Buah Musiman</option>
-                </select>
                 <input type="text" name="desc" value="{{item.desc}}" placeholder="Deskripsi Produk" class="form-product-description">
 
                 <div style="text-align:center;">
@@ -117,19 +108,21 @@
           {% set n = m+1 %}
           {% set m = n %}
           {% endfor %}
-        {% set j = i+1 %}
-        {% set i = j %}
+
+        </div>
         {% endfor %}
-      </div>
+      
     </div>
   </section>
 
   <section id="produkkemasan" class="container-fluid">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-egg"></i> Produk Kemasan</div>
-    <div class="products-section">
-      <div class="items row">
-        {% set i = 0 %}
-        {% for key, jenis in produkkemasan %}
+    <div class="products-section bordered">
+      {% for key, jenis in produkkemasan %}
+        <div style="border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-top: 1px solid rgba(0, 0, 0, 0.5); padding:25px 0;">
+          <h2>{{key}}</h2>
+        </div>
+        <div class="items row">
           {% set m = 0 %}
           {% for item in jenis %}
           <form action="/editproducts" method="post" class="col-sm-6 col-lg-4 col-xl-3 items">
@@ -138,11 +131,6 @@
               <div class="card-body">
                 <h3 class="card-title" style="display:none">{{item.name}}</h3>
                 <input type="text" name="name" value="{{item.name}}" placeholder="Nama produk" class="form-product-name">
-                <select name="jenis">
-                  <option value="">(Jenis Produk)</option>
-                  <option value="Lokal" {% if item.jenis == "Lokal" %} selected="selected" {% endif %}>Lokal</option>
-                  <option value="Import" {% if item.jenis == "Import" %} selected="selected" {% endif %}>Import</option>
-                </select>
                 <input type="text" name="desc" value="{{item.desc}}" placeholder="Deskripsi Produk" class="form-product-description">
 
                 <div style="text-align:center;">
@@ -158,19 +146,21 @@
           {% set n = m+1 %}
           {% set m = n %}
           {% endfor %}
-        {% set j = i+1 %}
-        {% set i = j %}
+
+        </div>
         {% endfor %}
-      </div>
+      
     </div>
   </section>
 
   <section id="frozen" class="container-fluid">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-fish"></i> Frozen</div>
-    <div class="products-section">
-      <div class="items row">
-        {% set i = 0 %}
-        {% for key, jenis in frozen %}
+    <div class="products-section bordered">
+      {% for key, jenis in frozen %}
+        <div style="border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-top: 1px solid rgba(0, 0, 0, 0.5); padding:25px 0;">
+          <h2>{{key}}</h2>
+        </div>
+        <div class="items row">
           {% set m = 0 %}
           {% for item in jenis %}
           <form action="/editproducts" method="post" class="col-sm-6 col-lg-4 col-xl-3 items">
@@ -179,12 +169,6 @@
               <div class="card-body">
                 <h3 class="card-title" style="display:none">{{item.name}}</h3>
                 <input type="text" name="name" value="{{item.name}}" placeholder="Nama produk" class="form-product-name">
-                <select name="jenis">
-                  <option value="">(Jenis Produk)</option>
-                  <option value="Ayam" {% if item.jenis == "Ayam" %} selected="selected" {% endif %}>Ayam</option>
-                  <option value="Ikan" {% if item.jenis == "Ikan" %} selected="selected" {% endif %}>Ikan</option>
-                  <option value="Olahan" {% if item.jenis == "Olahan" %} selected="selected" {% endif %}>Olahan</option>
-                </select>
                 <input type="text" name="desc" value="{{item.desc}}" placeholder="Deskripsi Produk" class="form-product-description">
 
                 <div style="text-align:center;">
@@ -200,19 +184,21 @@
           {% set n = m+1 %}
           {% set m = n %}
           {% endfor %}
-        {% set j = i+1 %}
-        {% set i = j %}
+
+        </div>
         {% endfor %}
-      </div>
+      
     </div>
   </section>
 
   <section id="produkolahan" class="container-fluid last">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-cookie-bite"></i> Produk Olahan</div>
-    <div class="products-section">
-      <div class="items row">
-        {% set i = 0 %}
-        {% for key, jenis in produkolahan %}
+    <div class="products-section bordered">
+      {% for key, jenis in produkolahan %}
+        <div style="border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-top: 1px solid rgba(0, 0, 0, 0.5); padding:25px 0;">
+          <h2>{{key}}</h2>
+        </div>
+        <div class="items row">
           {% set m = 0 %}
           {% for item in jenis %}
           <form action="/editproducts" method="post" class="col-sm-6 col-lg-4 col-xl-3 items">
@@ -221,12 +207,6 @@
               <div class="card-body">
                 <h3 class="card-title" style="display:none">{{item.name}}</h3>
                 <input type="text" name="name" value="{{item.name}}" placeholder="Nama produk" class="form-product-name">
-                <select name="jenis">
-                  <option value="">(Jenis Produk)</option>
-                  <option value="Household" {% if item.jenis == "Household" %} selected="selected" {% endif %}>Household</option>
-                  <option value="Skin" {% if item.jenis == "Skin" %} selected="selected" {% endif %}>Skin & Body Care</option>
-                  <option value="Sustainable" {% if item.jenis == "Sustainable" %} selected="selected" {% endif %}>Sustainable</option>
-                </select>
                 <input type="text" name="desc" value="{{item.desc}}" placeholder="Deskripsi Produk" class="form-product-description">
 
                 <div style="text-align:center;">
@@ -242,19 +222,21 @@
           {% set n = m+1 %}
           {% set m = n %}
           {% endfor %}
-        {% set j = i+1 %}
-        {% set i = j %}
+
+        </div>
         {% endfor %}
-      </div>
+      
     </div>
   </section>
 
   <section id="anakusaha" class="container-fluid last">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-cookie-bite"></i> Anak Usaha</div>
-    <div class="products-section">
-      <div class="items row">
-        {% set i = 0 %}
-        {% for key, jenis in anakusaha %}
+    <div class="products-section bordered">
+      {% for key, jenis in anakusaha %}
+        <div style="border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-top: 1px solid rgba(0, 0, 0, 0.5); padding:25px 0;">
+          <h2>{{key}}</h2>
+        </div>
+        <div class="items row">
           {% set m = 0 %}
           {% for item in jenis %}
           <form action="/editproducts" method="post" class="col-sm-6 col-lg-4 col-xl-3 items">
@@ -263,11 +245,6 @@
               <div class="card-body">
                 <h3 class="card-title" style="display:none">{{item.name}}</h3>
                 <input type="text" name="name" value="{{item.name}}" placeholder="Nama produk" class="form-product-name">
-                <select name="jenis">
-                  <option value="">(Jenis Produk)</option>
-                  <option value="Anak Usaha" {% if item.jenis == "Anak Usaha" %} selected="selected" {% endif %}>Okay Juice</option>
-                  <option value="Madesan" {% if item.jenis == "Madesan" %} selected="selected" {% endif %}>Madesan</option>
-                </select>
                 <input type="text" name="desc" value="{{item.desc}}" placeholder="Deskripsi Produk" class="form-product-description">
 
                 <div style="text-align:center;">
@@ -283,10 +260,10 @@
           {% set n = m+1 %}
           {% set m = n %}
           {% endfor %}
-        {% set j = i+1 %}
-        {% set i = j %}
+
+        </div>
         {% endfor %}
-      </div>
+      
     </div>
   </section>
 

@@ -1,7 +1,5 @@
 /* productpage */
 .products-section{
-  height: calc(var(--vh, 1vh) * 70);
-  overflow-y: scroll;
   overflow-x: hidden;
 }
 /* searchbar */
@@ -22,12 +20,12 @@
 }
 
 .bordered {
-  width: 60%;
-  padding: 0.6%;
+  width: 91.5%;
+  padding: 0 0.6% 0.6% 0.6%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  border: 1px solid rgba(0,0,0,0.2);
+  border: 1px solid black;
   border-radius: 15px;
 }
 
@@ -241,6 +239,10 @@ input{
     width:30%;
     font-size:32px;
   }
+  h2 {
+    font-size: 20px;
+  }
+
   .subtitle-button {
     width: 20%;
     font-size: 25px;
@@ -249,17 +251,8 @@ input{
   .card-img-top {
     width: auto;
     height: auto;
-    max-height: 400px;
   }
 
-  .bordered {
-    padding: 0.6%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    border: 1px solid rgba(0,0,0,0.2);
-    border-radius: 15px;
-  }
   .searchresult{
     border: 1px solid rgba(0,0,0,0.2);
     padding: 2%;
@@ -320,5 +313,8 @@ input{
   	border-radius:4px;
     display: inline-block;
     vertical-align: middle;
+  }
+  select{
+    font-size: 2rem;
   }
 }

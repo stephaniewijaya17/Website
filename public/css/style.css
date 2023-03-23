@@ -49,10 +49,19 @@ a,a:active,a:visited,a:hover{
   animation: mymove 5s infinite;
 }
 
+h2 {
+  font-size: 1.5rem;
+}
+
+.products-section {
+  margin-top: 0;
+}
+
 @keyframes mymove {
   from {transform: rotate(0deg)}
   to {transform: rotate(360deg)}
 }
+
 
 
 /* media query */
@@ -61,7 +70,7 @@ a,a:active,a:visited,a:hover{
     font-size: 4rem;
   }
   h2{
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   h3{
     font-size: 2.5rem;
@@ -71,7 +80,6 @@ a,a:active,a:visited,a:hover{
   }
   section{
     margin-bottom: 5%;
-    height:calc(var(--vh, 1vh) * 77);
   }
   .rounded-box{
     font-size: 2rem;

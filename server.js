@@ -52,14 +52,14 @@ app.post("/addproducts", upload.single('image',1), function(req, res) {
   var data= json.read()
   var newdata = {
     id : req.body.name.replaceAll(" ","").toLowerCase(),
-    id_harga: req.body.id_harga,
+    //ini gw ganti id_harga
+    id_harga: req.body.type + req.body.jenis + data[req.body.type][req.body.jenis].length,
     name: req.body.name,
     img: req.file.originalname,
     desc: req.body.desc,
     harga: req.body.harga,
     jenis: req.body.jenis
   }
-  // add if block if jenis not selected
   json.update(newdata, req.body.type, req.body.jenis)
   res.redirect("/success")
 })
