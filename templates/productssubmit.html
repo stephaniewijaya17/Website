@@ -53,11 +53,11 @@
               <input class="form-image" type="file" name="image" accept="image/*" onchange="loadFile(event)" placeholder="Add Image">
               <select name="jenis">
                 <option value="">(Jenis Produk)</option>
-                <option value="sayurberdaun">Sayur Berdaun</option>
-                <option value="sayurlain">Sayur Lain</option>
-                <option value="kacang">Kacang</option>
-                <option value="bawang">Bawang</option>
-                <option value="umbi">Umbi</option>
+                <option value="Sayur Berdaun">Sayur Berdaun</option>
+                <option value="Sayur Lain">Sayur Lain</option>
+                <option value="Kacang">Kacang</option>
+                <option value="Bawang">Bawang</option>
+                <option value="Umbi">Umbi</option>
               </select>
               <input type="text" name="name" value="" placeholder="Nama produk" class="form-product-name">
               <input type="text" name="desc" value="" placeholder="Deskripsi Produk" class="form-product-description">
@@ -88,7 +88,7 @@
                   <input id="{{item.id_harga}}" type="text" value="1" />
                   <span class="plus" onclick="plus(this)">+</span>
                 </div>
-                <a href='/removeproducts/sayur/{{i}}'>
+                <a href='/removeproducts/sayur/{{item.jenis}}/{{m}}'>
                   <button type="button" class="btn btn-danger rounded-box" style='margin:30px auto;'>Remove Product</button>
                 </a>
               </div>
@@ -151,7 +151,7 @@
                   <input id="{{item.id_harga}}" type="text" value="1" />
                   <span class="plus" onclick="plus(this)">+</span>
                 </div>
-                <a href='/removeproducts/buah/{{i}}'>
+                <a href='/removeproducts/buah/{{item.jenis}}/{{m}}'>
                   <button type="button" class="btn btn-danger rounded-box" style='margin:30px auto;'>Remove Product</button>
                 </a>
               </div>
@@ -214,7 +214,7 @@
                   <input id="{{item.id_harga}}" type="text" value="1" />
                   <span class="plus" onclick="plus(this)">+</span>
                 </div>
-                <a href='/removeproducts/produkkemasan/{{i}}'>
+                <a href='/removeproducts/produkkemasan/{{item.jenis}}/{{m}}'>
                   <button type="button" class="btn btn-danger rounded-box" style='margin:30px auto;'>Remove Product</button>
                 </a>
               </div>
@@ -281,7 +281,7 @@
                   <input id="{{item.id_harga}}" type="text" value="1" />
                   <span class="plus" onclick="plus(this)">+</span>
                 </div>
-                <a href='/removeproducts/frozen/{{i}}'>
+                <a href='/removeproducts/frozen/{{item.jenis}}/{{m}}'>
                   <button type="button" class="btn btn-danger rounded-box" style='margin:30px auto;'>Remove Product</button>
                 </a>
               </div>
@@ -345,7 +345,7 @@
                   <input id="{{item.id_harga}}" type="text" value="1" />
                   <span class="plus" onclick="plus(this)">+</span>
                 </div>
-                <a href='/removeproducts/produkolahan/{{i}}'>
+                <a href='/removeproducts/produkolahan/{{item.jenis}}/{{m}}'>
                   <button type="button" class="btn btn-danger rounded-box" style='margin:30px auto;'>Remove Product</button>
                 </a>
               </div>
@@ -408,7 +408,7 @@
                   <input id="{{item.id_harga}}" type="text" value="1" />
                   <span class="plus" onclick="plus(this)">+</span>
                 </div>
-                <a href='/removeproducts/anakusaha/{{i}}'>
+                <a href='/removeproducts/anakusaha/{{item.jenis}}/{{m}}'>
                   <button type="button" class="btn btn-danger rounded-box" style='margin:30px auto;'>Remove Product</button>
                 </a>
               </div>

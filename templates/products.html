@@ -60,30 +60,31 @@
   <section id="sayur" class="container-fluid">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-leaf"></i> Sayur</div>
     <div class="products-section">
+      {% for key, jenis in sayur %}
+      <div class="block">
+      {% if jenis.length > 0 %}<div class="btn btn-outline-dark rounded-box1 subtitle-button"><i class="fa-solid fa-leaf"></i> {{key}}</div> {% endif %}
+      </div>
       <div class="items row">
 
-        {% for key, jenis in sayur %}
-          {% for item in jenis %}
-          <div class="col-sm-6 col-lg-4 col-xl-3 items" id="{{item.special_id}}">
-            <div class="card" id="{{item.id}}">
-              <img src="images/{{item.img}}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <p class="card-text">{{item.jenis}}</p>
-                <h3 class="card-title">{{item.name}}</h3>
-                <p class="card-text">{{item.desc}}</p>
-                <p class="card-text">Rp.<span id = "{{'harga'+item.id_harga}}">{{item.harga}}</span></p>
-                <div class="number">
-                  <span class="minus" onclick="minus(this)">-</span>
-                  <input id="{{item.id_harga}}" type="text" value="1" />
-                  <span class="plus" onclick="plus(this)">+</span>
-                </div>
-                <button type="button" class="btn btn-success rounded-box" style='margin:30px auto;' onclick="add_products('{{item.name}}','{{item.id_harga}}','{{item.img}}')"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+        {% for item in jenis %}
+        <div class="col-sm-6 col-lg-4 col-xl-3 items" id="{{item.special_id}}">
+          <div class="card" id="{{item.id}}">
+            <img src="images/{{item.img}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h3 class="card-title">{{item.name}}</h3>
+              <p class="card-text">{{item.desc}}</p>
+              <p class="card-text">Rp.<span id = "{{'harga'+item.id_harga}}">{{item.harga}}</span></p>
+              <div class="number">
+                <span class="minus" onclick="minus(this)">-</span>
+                <input id="{{item.id_harga}}" type="text" value="1" />
+                <span class="plus" onclick="plus(this)">+</span>
               </div>
+              <button type="button" class="btn btn-success rounded-box" style='margin:30px auto;' onclick="add_products('{{item.name}}','{{item.id_harga}}','{{item.img}}')"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
             </div>
           </div>
-          {% endfor %}
+        </div>
         {% endfor %}
-
+      {% endfor %}
       </div>
     </div>
   </section>
@@ -91,6 +92,9 @@
   <section id="buah" class="container-fluid">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-apple-whole"></i> Buah</div>
     <div class="products-section">
+      <div class="block">
+        {% if jenis.length > 0 %}<div class="btn btn-outline-dark rounded-box1 subtitle-button"><i class="fa-solid fa-apple-whole"></i> {{key}}</div> {% endif %}
+      </div>
       <div class="items row">
 
         {% for key, jenis in buah %}
@@ -99,7 +103,6 @@
             <div class="card" id="{{item.id}}">
               <img src="images/{{item.img}}" class="card-img-top" alt="...">
               <div class="card-body">
-                <p class="card-text">{{item.jenis}}</p>
                 <h3 class="card-title">{{item.name}}</h3>
                 <p class="card-text">{{item.desc}}</p>
                 <p class="card-text">Rp.<span id = "{{'harga'+item.id_harga}}">{{item.harga}}</span></p>
@@ -122,15 +125,17 @@
   <section id="produkkemasan" class="container-fluid">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-egg"></i> Produk Kemasan</div>
     <div class="products-section">
+      <div class="block">
+        {% if jenis.length > 0 %}<div class="btn btn-outline-dark rounded-box1 subtitle-button"><i class="fa-solid fa-egg"></i> {{key}}</div> {% endif %}
+      </div>
       <div class="items row">
 
-        {% for key, jenis in produkkemasan %}
+        {% for key, jenis in produk_kemasan %}
           {% for item in jenis %}
           <div class="col-sm-6 col-lg-4 col-xl-3 items" id="{{item.special_id}}">
             <div class="card" id="{{item.id}}">
               <img src="images/{{item.img}}" class="card-img-top" alt="...">
               <div class="card-body">
-                <p class="card-text">{{item.jenis}}</p>
                 <h3 class="card-title">{{item.name}}</h3>
                 <p class="card-text">{{item.desc}}</p>
                 <p class="card-text">Rp.<span id = "{{'harga'+item.id_harga}}">{{item.harga}}</span></p>
@@ -153,6 +158,9 @@
   <section id="frozen" class="container-fluid">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-fish"></i> Frozen</div>
     <div class="products-section">
+      <div class="block">
+        {% if jenis.length > 0 %}<div class="btn btn-outline-dark rounded-box1 subtitle-button"><i class="fa-solid fa-fish"></i> {{key}}</div> {% endif %}
+      </div>
       <div class="items row">
 
         {% for key, jenis in frozen %}
@@ -161,7 +169,6 @@
             <div class="card" id="{{item.id}}">
               <img src="images/{{item.img}}" class="card-img-top" alt="...">
               <div class="card-body">
-                <p class="card-text">{{item.jenis}}</p>
                 <h3 class="card-title">{{item.name}}</h3>
                 <p class="card-text">{{item.desc}}</p>
                 <p class="card-text">Rp.<span id = "{{'harga'+item.id_harga}}">{{item.harga}}</span></p>
@@ -184,6 +191,9 @@
   <section id="produkolahan" class="container-fluid last">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-cookie-bite"></i> Produk Olahan</div>
     <div class="products-section">
+      <div class="block">
+        {% if jenis.length > 0 %}<div class="btn btn-outline-dark rounded-box1 subtitle-button"><i class="fa-solid fa-cookie-bite"></i> {{key}}</div> {% endif %}
+      </div>
       <div class="items row">
 
         {% for key, jenis in produkolahan %}
@@ -192,7 +202,6 @@
             <div class="card" id="{{item.id}}">
               <img src="images/{{item.img}}" class="card-img-top" alt="...">
               <div class="card-body">
-                <p class="card-text">{{item.jenis}}</p>
                 <h3 class="card-title">{{item.name}}</h3>
                 <p class="card-text">{{item.desc}}</p>
                 <p class="card-text">Rp.<span id = "{{'harga'+item.id_harga}}">{{item.harga}}</span></p>
@@ -215,6 +224,9 @@
   <section id="anakusaha" class="container-fluid last">
     <div class="btn btn-outline-dark rounded-box title-button"><i class="fa-solid fa-cookie-bite"></i> Anak Usaha</div>
     <div class="products-section">
+      <div class="block">
+        {% if jenis.length > 0 %}<div class="btn btn-outline-dark rounded-box1 subtitle-button"><i class="fa-solid fa-cookie-bite"></i> {{key}}</div> {% endif %}
+      </div>
       <div class="items row">
 
         {% for key, jenis in anakusaha %}
@@ -223,7 +235,6 @@
             <div class="card" id="{{item.id}}">
               <img src="images/{{item.img}}" class="card-img-top" alt="...">
               <div class="card-body">
-                <p class="card-text">{{item.jenis}}</p>
                 <h3 class="card-title">{{item.name}}</h3>
                 <p class="card-text">{{item.desc}}</p>
                 <p class="card-text">Rp.<span id = "{{'harga'+item.id_harga}}">{{item.harga}}</span></p>

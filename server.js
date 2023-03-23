@@ -70,7 +70,7 @@ app.post("/editproducts/", function(req, res) {
   res.redirect("/success")
 })
 
-app.get("/removeproducts/:type/:id", function(req,res) {
+app.get("/removeproducts/:type/:jenis/:id", function(req,res) {
   json.remove(req.params.type, req.params.jenis,Number(req.params.id))
   res.redirect("/success")
 })
