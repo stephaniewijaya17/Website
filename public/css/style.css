@@ -53,10 +53,6 @@ h2 {
   font-size: 1.5rem;
 }
 
-.products-section {
-  margin-top: 0;
-}
-
 @keyframes mymove {
   from {transform: rotate(0deg)}
   to {transform: rotate(360deg)}
